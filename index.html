@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moodang - CS Portfolio</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="#home" class="nav-logo">{"CS_Portfolio"}</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button
+          class="theme-toggle"
+          onclick="toggleTheme()"
+          aria-label="Toggle theme"
+        >
+          <span id="theme-icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <section id="home" class="section hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Moodang</h1>
+          <p>Aspiring Computer Science Student & Future Tech Innovator</p>
+          <a href="#about" class="cta-button">Discover My Journey</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            Passionate about technology and innovation
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="profile-image">
+            <img
+              src="https://ik.imagekit.io/1yx14mqni/10562.jpg?updatedAt=1752928980619"
+              alt="Moodang - Profile Picture"
+              onerror="this.style.display='none'"
+            />
+          </div>
+          <div class="glass-card">
+            <h3 style="color: var(--accent-color); margin-bottom: 1rem">
+              Hello! I'm Issaranuwat Teerasarn
+            </h3>
+            <p style="margin-bottom: 1rem">
+              Hello! ผมชื่ออิสรานุวัฒน์ ธีระศานต์ หรือชื่อเล่นว่า หมูแดง
+              ปัจจุบันอายุ 16 ปี และกำลังศึกษาอยู่ในระดับชั้นมัธยมศึกษาตอนปลาย
+              ผมมีความสนใจด้านโปรแกรมมิ่งและเทคโนโลยีเป็นพิเศษ
+              ชอบศึกษาการทำงานเบื้องหลังของระบบต่างๆ
+              และหลงใหลในการสร้างสรรค์โปรเจกต์ที่สามารถนำไปแก้ปัญหาในชีวิตจริงได้
+            </p>
+            <p style="margin-bottom: 1rem">
+              ผมหลงใหลในการเขียนโค้ด โดยเฉพาะด้านเว็บพัฒนา ซอฟต์แอปพลิเคชัน
+              และปัญญาประดิษฐ์ ผมชอบทดลองเทคโนโลยีใหม่ๆ สร้างเว็บไซต์
+              และทำโปรเจกต์สนุกๆ ระหว่างเรียนรู้ไปด้วย
+              งานที่มีทั้งการคิดอย่างมีเหตุผลและความสร้างสรรค์คือความท้าทายที่ผมชอบที่สุด
+              และผมรู้สึกตื่นเต้นทุกครั้งที่ได้เรียนรู้อะไรใหม่ๆ
+              ในสายคอมพิวเตอร์
+            </p>
+            <p style="margin-bottom: 1rem">
+              ในอนาคต ผมอยากเติบโตเป็นนักพัฒนาหรือวิศวกรซอฟต์แวร์มืออาชีพ
+              ที่สามารถสร้างเทคโนโลยีที่มีความหมายและช่วยให้ผู้คนใช้ชีวิตได้ดีขึ้น
+              ผมสนใจการทำงานเป็นทีม การร่วมสร้างโปรเจกต์กับผู้อื่น
+              และพยายามพัฒนาทักษะของตัวเองให้ดีขึ้นอยู่เสมอ
+            </p>
+            <p>
+              เวลาที่ไม่ได้เขียนโค้ด ผมก็มักจะใช้เวลาเรียนรู้ภาษาโปรแกรมใหม่ๆ
+              อยู่เสมอ ผมเชื่อว่าเทคโนโลยีสามารถเปลี่ยนโลกได้
+              และผมตั้งใจจะเป็นหนึ่งในคนที่สร้างการเปลี่ยนแปลงนั้น
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-subtitle">
+            เลือกทักษะที่คุณสนใจเพื่ออ่านรายละเอียดประสบการณ์ของผม
+          </p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('python')"
+              tabindex="0"
+            >
+              <p>Python</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('javascript')"
+              tabindex="0"
+            >
+              <p>JavaScript</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('java')"
+              tabindex="0"
+            >
+              <p>Java</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('cpp')"
+              tabindex="0"
+            >
+              <p>C++</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Web Technologies</h3>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('html-css')"
+              tabindex="0"
+            >
+              <p>HTML/CSS</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('react')"
+              tabindex="0"
+            >
+              <p>React</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('nodejs')"
+              tabindex="0"
+            >
+              <p>Node.js</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('git')"
+              tabindex="0"
+            >
+              <p>Git</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Databases & Tools</h3>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('sql')"
+              tabindex="0"
+            >
+              <p>SQL</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('mongodb')"
+              tabindex="0"
+            >
+              <p>Excel</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('docker')"
+              tabindex="0"
+            >
+              <p>Docker</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+            <div
+              class="skill-item"
+              onclick="openSkillModal('aws')"
+              tabindex="0"
+            >
+              <p>AWS</p>
+              <div class="skill-bar"><div class="skill-progress"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">แสดงผลงานที่ผมเคยทำ</p>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card" onclick="openProjectModal('smart-canteen')">
+            <div class="project-image">
+              <div class="image-slider">
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/6210.jpg"
+                  alt="Smart Canteen Screenshot 1"
+                />
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/Screenshot%202025-07-19%20195306.png?updatedAt=1752929596759"
+                  alt="Smart Canteen Screenshot 2"
+                />
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/Screenshot%202025-12-10%20114742.png"
+                  alt="Smart Canteen Screenshot 3"
+                />
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Smart Canteen</h3>
+              <p>แอพสำหรับโรงอาหาร</p>
+              <div style="margin-top: 1rem">
+                <span
+                  style="
+                    background: var(--accent-color);
+                    color: var(--primary-bg);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                    margin-right: 0.5rem;
+                  "
+                  >Figma</span
+                >
+                <span
+                  style="
+                    background: var(--accent-color);
+                    color: var(--primary-bg);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                  "
+                  >HTML</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="project-card" onclick="openProjectModal('education-hub')">
+            <div class="project-image">
+              <div class="image-slider">
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/Screenshot%202025-07-19%20195902.png?updatedAt=1752929951879"
+                  alt="Education Hub Screenshot 1"
+                />
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/Screenshot%202025-12-10%20121854.png"
+                  alt="Education Hub Screenshot 2"
+                />
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/Screenshot%202025-12-10%20121919.png"
+                  alt="Education Hub Screenshot 3"
+                />
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Education Hub</h3>
+              <p>
+                แพลตฟอร์มสำหรับนักเรียนและครูในโรงเรียนของเราเพื่อสนับสนุนการเรียนรู้
+              </p>
+              <div style="margin-top: 1rem">
+                <span
+                  style="
+                    background: var(--accent-color);
+                    color: var(--primary-bg);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                    margin-right: 0.5rem;
+                  "
+                  >Glide</span
+                >
+                <span
+                  style="
+                    background: var(--accent-color);
+                    color: var(--primary-bg);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                    margin-right: 0.5rem;
+                  "
+                  >HTML</span
+                >
+                <span
+                  style="
+                    background: var(--accent-color);
+                    color: var(--primary-bg);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                  "
+                  >Excel</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card"
+            onclick="openProjectModal('newest-project')"
+          >
+            <div class="project-image">
+              <div class="image-slider">
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A0%E0%B8%97%E0%B8%97%E0%B8%B5%E0%B8%A1.png"
+                  alt="Newest Project Screenshot 1"
+                />
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/Screenshot%202025-07-19%20200919.png?updatedAt=1752930566908"
+                  alt="Newest Project Screenshot 2"
+                />
+                <img
+                  src="https://ik.imagekit.io/1yx14mqni/Screenshot%202025-07-19%20200919.png?updatedAt=1752930566908"
+                  alt="Newest Project Screenshot 3"
+                />
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                การแข่งขันเขียนโปรแกรมภาษาคอมพิวเตอร์
+              </h3>
+              <p>
+                ผมอยากลองทำสิ่งที่ไม่เคยทำมาก่อน
+                แม้มันอาจจะไม่ใช่สิ่งที่ตลาดต้องการก็ตาม แต่สำหรับผมก็ไม่เป็นไร
+                เพราะผมอยากสร้างสิ่งใหม่ที่มาจากความคิดและความตั้งใจของตัวเอง
+              </p>
+              <div style="margin-top: 1rem">
+                <span
+                  style="
+                    background: var(--accent-color);
+                    color: var(--primary-bg);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                    margin-right: 0.5rem;
+                  "
+                  >HTML</span
+                >
+                <span
+                  style="
+                    background: var(--accent-color);
+                    color: var(--primary-bg);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                    margin-right: 0.5rem;
+                  "
+                  >CSS</span
+                >
+                <span
+                  style="
+                    background: var(--accent-color);
+                    color: var(--primary-bg);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                  "
+                  >JS</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">
+            Ready to collaborate and create amazing things together
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="glass-card">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem">
+              ฉันยินดีเสมอที่จะได้พูดคุยกับนักพัฒนาคนอื่นๆ ผู้ที่อยากร่วมงาน
+              หรือใครก็ตามที่สนใจด้านเทคโนโลยี ไม่ว่าคุณจะมีไอเดียโปรเจกต์
+              อยากแลกเปลี่ยนมุมมองเกี่ยวกับเทรนด์เทคโนโลยี หรือแค่อยากทักทาย
+              ก็สามารถติดต่อฉันได้เลย ยินดีมากที่จะได้ทำความรู้จักกัน!
+            </p>
+            <div class="contact-links">
+              <a href="mailto:epiclac3@gmail.com" class="contact-link">
+                <span>📧</span>
+                <span>Email</span>
+              </a>
+              <a
+                href="https://www.instagram.com/mdg.pgm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                class="contact-link"
+                target="_blank"
+              >
+                <span>💼</span>
+                <span>IG</span>
+              </a>
+              <a
+                href="https://github.com/MDGbutBBG"
+                class="contact-link"
+                target="_blank"
+              >
+                <span>👨‍💻</span>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      style="
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      "
+    >
+      <p>
+        อาจมีการปรับปรุง UX/UI
+        หรืออัปเดตข้อมูลในอนาคตเพื่อให้ประสบการณ์ใช้งานดียิ่งขึ้น
+        ขอบคุณที่เข้ามาเยี่ยมชม
+      </p>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          onclick="closeProjectModal()"
+          aria-label="Close modal"
+        >
+          ×
+        </button>
+
+        <div class="modal-header">
+          <div class="modal-image">
+            <img id="modal-project-image" src="" alt="" style="display: none" />
+            <span id="modal-image-placeholder">Project Screenshot</span>
+          </div>
+          <div class="modal-info">
+            <h2 id="modal-project-title"></h2>
+            <div id="modal-project-tags" class="modal-tags"></div>
+            <p id="modal-project-description" class="modal-description"></p>
+          </div>
+        </div>
+
+        <div class="modal-features">
+          <h3>Key Features</h3>
+          <ul id="modal-project-features" class="feature-list"></ul>
+        </div>
+
+        <div class="modal-links">
+          <a
+            id="modal-live-link"
+            href="#"
+            class="modal-link"
+            target="_blank"
+            style="display: none"
+          >
+            <span>🚀</span>
+            <span>Live Demo</span>
+          </a>
+          <a
+            id="modal-github-link"
+            href="#"
+            class="modal-link"
+            target="_blank"
+            style="display: none"
+          >
+            <span>📱</span>
+            <span>View Code</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skill Modal -->
+    <div id="skill-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          onclick="closeSkillModal()"
+          aria-label="Close modal"
+        >
+          ×
+        </button>
+
+        <div class="skill-modal-header">
+          <div class="skill-icon" id="skill-icon">🐍</div>
+          <div>
+            <h2 class="skill-modal-title" id="skill-title">Python</h2>
+            <p class="skill-level" id="skill-level">Intermediate Level</p>
+          </div>
+        </div>
+
+        <p class="skill-description" id="skill-description">
+          Python เป็นภาษาหลักที่ผมใช้สำหรับงานวิเคราะห์ข้อมูล งานอัตโนมัติ
+          และการพัฒนาแบ็กเอนด์
+        </p>
+
+        <div class="skill-details" id="skill-details">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
