@@ -868,22 +868,10 @@ document.querySelectorAll(".section").forEach((section) => {
 });
 
 // Mobile Menu Toggle
+// Mobile Menu Toggle
 function toggleMobileMenu() {
   const navLinks = document.querySelector(".nav-links");
-
-  navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
-
-  if (navLinks.style.display === "flex") {
-    navLinks.style.position = "absolute";
-    navLinks.style.top = "100%";
-    navLinks.style.left = "0";
-    navLinks.style.right = "0";
-    navLinks.style.background = "rgba(0, 0, 0, 0.9)";
-    navLinks.style.backdropFilter = "blur(20px)";
-    navLinks.style.flexDirection = "column";
-    navLinks.style.padding = "2rem";
-    navLinks.style.borderTop = "1px solid var(--glass-border)";
-  }
+  navLinks.classList.toggle("active");
 }
 
 // Navbar scroll effect
